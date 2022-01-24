@@ -18,7 +18,7 @@ function eventoclick () {
 
     if(nombre.value == ""){
     
-        var contenido = "<p class='bg-light text-danger'>Hay campos que requieren ser completados</p>"
+        var contenido = "<p class=' text-danger'>Hay campos que requieren ser completados</p>"
         document.getElementById("boton-enviar").innerHTML = contenido;
         var contenido = "<p class ='bg-light text-danger'> Nombre * </p>"
         document.getElementById("nombre1").innerHTML = contenido;
