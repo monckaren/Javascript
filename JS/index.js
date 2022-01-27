@@ -1,11 +1,11 @@
 //Lista de productos 
 const prendas = [
-{nombre:"Campera White", imagen: "ary-milligan-nLVyej-i2N4-unsplash.jpg", precio:"5800"},
-{nombre: "Remera Black Slim Fit", imagen: "ian-dooley-1yl3jzKoKXg-unsplash.jpg", precio:"2300" },
-{nombre: "Jean Slim Fit", imagen: "vladimir-fedotov-MPfyh3xJ1iE-unsplash.jpg", precio:"4800" },
-{nombre: "Jean Holgado Claro ", imagen: "hans-isaacson-QJfXnkKrtlo-unsplash.jpg", precio:"5300" },
-{nombre: "Jean Roto con Parches", imagen: "alicia-petresc-BciCcl8tjVU-unsplash.jpg", precio:"4300" },
-{nombre: "Blazer Black", imagen: "joshua-rondeau-3_sGB2ON4X0-unsplash.jpg", precio:"4600" },
+{id:1, nombre:"Campera White", imagen: "ary-milligan-nLVyej-i2N4-unsplash.jpg", precio:"5800"},
+{id:2, nombre: "Remera Black Slim Fit", imagen: "ian-dooley-1yl3jzKoKXg-unsplash.jpg", precio:"2300" },
+{id:3, nombre: "Jean Slim Fit", imagen: "vladimir-fedotov-MPfyh3xJ1iE-unsplash.jpg", precio:"4800" },
+{id:4, nombre: "Jean Holgado Claro ", imagen: "hans-isaacson-QJfXnkKrtlo-unsplash.jpg", precio:"5300" },
+{id:5, nombre: "Jean Roto con Parches", imagen: "alicia-petresc-BciCcl8tjVU-unsplash.jpg", precio:"4300" },
+{id:6, nombre: "Blazer Black", imagen: "joshua-rondeau-3_sGB2ON4X0-unsplash.jpg", precio:"4600" },
 ]
 //Defino las variables 
 class ropa {
@@ -43,7 +43,7 @@ let contenido = "";
 
 //Se genera el codigo HTML para cargar las cards con la info de los productos 
 for (let prendaCargada of prendasCargadas) {
-    
+
     let Ropa = new ropa(prendaCargada);
    
     contenido += " <div class=' card p-2 g-4' style='width: 15rem;'>";
@@ -56,10 +56,19 @@ for (let prendaCargada of prendasCargadas) {
     contenido += "<div class=' card-text'><span>"+Ropa.aplicarDescuento()+"</span></div>";
     contenido += "<div class=' card-text bg-dark text-light'><span>6 cuotas sin interes</span></div>";
     contenido += "</div>";
-    contenido += "<button type='button' class='btn btn-light btn-outline-dark btn-md id='boton-agregar''>Agregar</button>";
+    contenido += "<div>";
+    contenido += "<button type='button' class='btn btn-dark  btn-md ' type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasRight' aria-controls='offcanvasRight'Toggle right offcanvas id='boton-agregar'>Agregar</button>";
+    contenido += "<div class='offcanvas offcanvas-end' tabindex='-1' id='offcanvasRight' aria-labelledby='offcanvasRightLabel'>";
+    contenido += "<div class='offcanvas-header'>";
+    contenido += "<h5 id='offcanvasRightLabel'>Carrito</h5>";
+    contenido += "<button type='button' class='btn-close text-reset' data-bs-dismiss='offcanvas' aria-label='Close'></button>";
+    contenido += " </div>"
+    contenido += "<div class='offcanvas-body'>";
     contenido += "</div>";
     contenido += "</div>";
- 
+    contenido += "</div>";
+    contenido += "</div>";
+    contenido += "</div>";
  
 }
 
@@ -67,11 +76,5 @@ for (let prendaCargada of prendasCargadas) {
 //Se cargan las cards con la info de los productos al HTML
 let prendasOferta = document.getElementById("prendas");
 prendasOferta.innerHTML = contenido;
-
-/*let boton = document.getElementById("boton-agregar");
-boton.onclick = () => {
-var contenido = "<p class='alert bg-dark '> Se agrego "+ropa.nombre+" al carrito </p>";
-document.getElementById("boton-agregar").innerHTML = contenido;
-}*/
 
 

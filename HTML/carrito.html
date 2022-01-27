@@ -19,7 +19,10 @@
           <a class="navbar-brand" href="index.html">Inicio</a>
           <a class="navbar-brand" href="#">Indumentaria</a>
           <a class="navbar-brand" id="sale" href="sale.html">SALE</a>
-          <a class="navbar-brand" id="sale" href="carrito.html"><img src="/Images/pngwing.com.png" width="30px" alt=""></a>
+          <div >
+            <a class="navbar-brand" id="carritoImg" href="carrito.html"><img src="/Images/pngwing.com.png" width="30px" alt=""></a>
+            <p id="datosCarrito"></p>
+            </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon" ></span>
           </button>
@@ -59,122 +62,61 @@
         </div>
       </nav>
 </header> 
-   <section class="formulario ">
-       <div class="container">
-           <div class="row">
-       
-               <div class="mt-4 col-md-6">
-               <h2>Datos de Facturacion</h2>
-                <form class="row g-3" >
-                    <div class="col-md-4" >
-                      <label for="validationServer01" class="form-label" >Nombre</label>
-                      <input type="text" id = "nombre1"  required>
-                      <div class="valid-feedback">
-                       Nombre Valido
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <label for="validationServer02" class="form-label">Apellido</label>
-                      <input type="text" class="form-control " id="apellido"  required>
-                      <div class="valid-feedback">
-                        Apellido Valido
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <label for="validationServer03" class="form-label" id="ciudad">Ciudad</label>
-                      <input type="text" class="form-control " id="validationServer03" aria-describedby="validationServer03Feedback" required>
-                      <div id="validationServer03Feedback" class="invalid-feedback">
-                        Ciudad o Municipalidad
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <label for="validationServer04" class="form-label" id="provincia">Provincia</label>
-                      <select class="form-select " id="opciones" name="opciones" aria-describedby="validationServer04Feedback" required>
-                        <option selected disabled value="">Elegir una provincia</option>
-                        <option value="1">Capital Federal </option>
-                        <option value="2">Catamarca</option>
-                        <option value="3">Chaco</option>
-                        <option value="4">Chubut</option>
-                        <option value="5">Cordoba</option>
-                        <option value="6">Corrientes</option>
-                        <option value="7">Entre Rios</option>
-                        <option value="8">Formosa</option>
-                        <option value="9">Jujuy</option>
-                        <option value="10">La Pampa</option>
-                        <option value="11">la Rioja </option>
-                        <option value="12">Mendoza</option>
-                        <option value="13">Misiones</option>
-                        <option value="14">Neuquen</option>
-                        <option value="15">Rio Negro</option>
-                        <option value="16">Salta</option>
-                        <option value="17"> San Juan</option>
-                        <option value="18">San Luis</option>
-                        <option value="19">Santa Cruz</option>
-                        <option value="20">Santa Fe</option>
-                        <option value="21">Santiago del Estero</option>
-                        <option value="22">Tierra del Fuego</option>
-                        <option value="23">Tucuman</option>
-                        <option value="24">Buenos Aires</option>
+    <section> 
+     
+      <div class="cotainer-fluid">
+        <div class="row">
+          <div class="col-md-12" >
+            <div class="carritoCompras">
 
 
-                      </select>
-                      <div id="validationServer04Feedback" class="invalid-feedback">
-                      Seleccione una Provincia
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <label for="validationServer05" class="form-label" id="cp">CP</label>
-                      <input type="text" class="form-control" id="validationServer05" aria-describedby="validationServer05Feedback" required>
-                      <div id="validationServer05Feedback" class="invalid-feedback">
-                       Ingrese un CP valido
-                      </div>
-                    </div>             
-                    <div class="col-12"id="boton-enviar">
-                      <button class="btn btn-primary "  type="button">Enviar</button>
-                    </div>
-                 </div>
             </div>
+            <button  id="eliminar">Eliminar</button>
+
+          </div>
+
         </div>
-        </div>
-        
+
+      </div>
+    </section>
         <section class="py-5">
             <div class="container ">
-                <div class="row ">
-                    <div class="col-md-4">
-                        <div>
-                            <h2>Datos de Compra</h2>
-                        </div>
-                        <div class="form-check">
-                          <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
-                          <label class="form-check-label " for="validationFormCheck2">Gratis</label>
-                          <p>Retira en la sucursal de CABA</p>
-                        </div>
-                        <h3 class="fs-4 py-3 px-2">Calcular Cuotas</h3>
-                        </form>
-                        <select class="form-select cuotas" aria-label="Default select example">
-                        <option selected>Cantidad de cuotas</option>
-                        <option value="1">1</option>
-                        <option value="2">3</option>
-                        <option value="3">6</option>
-                        </select>
-                        <select class="form-select mt-3" aria-label="Default select example">
-                        <option selected>Tipo de tarjeta</option>
-                        <option value="4">Visa</option>
-                        <option value="5">Mastercard</option>
-                        <option value="6">American Express</option>
-                        </select>
-                        <button class=" btn btn-primary mt-3" id="botonCalcular" type="button"> Calcular</button>
-                    </div>
-                    <div>
-                      <h3 class="total">Total a pagar: $</h3>
-                    </div>
+              <div class="row ">
+                <div class="col-md-4">
+                  <div>
+                    <h2>Datos de Compra</h2>
+                  </div>
+                  <div class="form-check">
+                  <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
+                  <label class="form-check-label " for="validationFormCheck2">Gratis</label>
+                  <p>Retira en la sucursal de CABA</p>
+                  </div>
+                  <h3 class="fs-4 py-3 px-2">Calcular Cuotas</h3>
+                  </form>
+                  <select class="form-select cuotas" aria-label="Default select example">
+                  <option selected>Cantidad de cuotas</option>
+                  <option value="1">1</option>
+                  <option value="2">3</option>
+                  <option value="3">6</option>
+                  </select>
+                  <select class="form-select mt-3" aria-label="Default select example">
+                  <option selected>Tipo de tarjeta</option>
+                  <option value="4">Visa</option>
+                  <option value="5">Mastercard</option>
+                  <option value="6">American Express</option>
+                  </select>
+                  <button class=" btn btn-primary mt-3" id="botonCalcular" type="button"> Calcular</button>
                 </div>
+              <div>
+                <h3 class="total">Total a pagar: $</h3>
+            </div>
+          </div>
             </div>
             
         </section>
                   
       
-   </section> 
+ 
     <!-- <script src="./main.js"></script> -->
     <!-- JS -->
     <script src="../JS/index.js"></script>
