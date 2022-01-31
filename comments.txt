@@ -1,0 +1,8 @@
+Para agregar los elementos en la tabla.
+
+Ya te estarían llegando desde el metodo en carrito.js cargarPrendas2
+En ese método te retornaria un array de objetos con todas las prendas agregadas
+PERO TIENES QUE SUMAR LA QUANTITY DE CADA UNAS DE ESAS PRENDAS EN EL METODO DE actualizarContador() en carrito.js
+Otro metodo para eliminarlos, borrándolos del array de objetos del localStorage
+Y añadir un for loop que itere sobre las prendas para agregarlas al innerhtml como lo hiciste en el la pagina de index
+

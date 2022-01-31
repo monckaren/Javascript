@@ -64,63 +64,70 @@
 </header> 
     <section> 
      
-      <div class="cotainer-fluid">
-        <div class="row">
-          <div class="col-md-12" >
-            <div class="carritoCompras">
+      <div id="carrito" class="form-group table-responsive" >
+        <table class="table" id="lista-compra" >
+            <thead>
+                <tr>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Sub Total</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
 
+            </thead>
+            <tbody >
 
-            </div>
-            <button  id="eliminar">Eliminar</button>
+            </tbody>
+            <tr>
+                <th colspan="4" scope="col" class="text-right">SUB TOTAL :</th>
+                <th scope="col">
+                    <p id="subtotal"></p>
+                </th>
+                <!-- <th scope="col"></th> -->
+            </tr>
+            <tr>
+                <th colspan="4" scope="col" class="text-right">DESCUENTO:</th>
+                <th scope="col">
+                    <p id="igv"></p>
+                </th>
+                <!-- <th scope="col"></th> -->
+            </tr>
+            <tr>
+                <th colspan="4" scope="col" class="text-right">TOTAL :</th>
+                <th scope="col">
+                    <input id="total" name="monto" class="font-weight-bold border-0" readonly style="background-color: white;"></input>
+                </th>
+                <!-- <th scope="col"></th> -->
+            </tr>
 
-          </div>
+        </table>
+    </div>
 
+   
+
+    <div class="row justify-content-between">
+        <div class="col-md-4 mb-2">
+            <a href="index.html" class="btn btn-info btn-block">Seguir comprando</a>
         </div>
-
-      </div>
+        <div class="col-xs-12 col-md-4">
+        <a href="form.html"class="btn btn-success btn-block"id="procesar-compra">Realizar compra</a> 
+        </div>
+        <div class="col-md-4 mb-2">
+          <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+        </div>
+        
     </section>
-        <section class="py-5">
-            <div class="container ">
-              <div class="row ">
-                <div class="col-md-4">
-                  <div>
-                    <h2>Datos de Compra</h2>
-                  </div>
-                  <div class="form-check">
-                  <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
-                  <label class="form-check-label " for="validationFormCheck2">Gratis</label>
-                  <p>Retira en la sucursal de CABA</p>
-                  </div>
-                  <h3 class="fs-4 py-3 px-2">Calcular Cuotas</h3>
-                  </form>
-                  <select class="form-select cuotas" aria-label="Default select example">
-                  <option selected>Cantidad de cuotas</option>
-                  <option value="1">1</option>
-                  <option value="2">3</option>
-                  <option value="3">6</option>
-                  </select>
-                  <select class="form-select mt-3" aria-label="Default select example">
-                  <option selected>Tipo de tarjeta</option>
-                  <option value="4">Visa</option>
-                  <option value="5">Mastercard</option>
-                  <option value="6">American Express</option>
-                  </select>
-                  <button class=" btn btn-primary mt-3" id="botonCalcular" type="button"> Calcular</button>
-                </div>
-              <div>
-                <h3 class="total">Total a pagar: $</h3>
-            </div>
-          </div>
-            </div>
+
+ 
             
-        </section>
-                  
-      
+
  
     <!-- <script src="./main.js"></script> -->
     <!-- JS -->
     <script src="../JS/index.js"></script>
-    <script src="/JS/carrito.js"></script>
+    <script src="../JS/carrito.js"></script>
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
