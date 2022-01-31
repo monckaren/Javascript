@@ -18,8 +18,6 @@ function cargarPrendas2(){
     
 }
 
-
-
 //ejecuta las funciones
 guardarPrendas2(prendas);
 cargarPrendas2();
@@ -57,6 +55,7 @@ function cargarCarrito (){
 return [];
 }
 
+//Agrega las prendas al carrito
 function agregarCarrrito(id){
     let prenda = buscarPrendas(id);
     let prendas2 = cargarCarrito();
@@ -67,7 +66,7 @@ function agregarCarrrito(id){
    
 }
 
-
+//Eliminar todas las prendas del carrito
 function eliminarCarrito(){
     localStorage.removeItem("totalCarrito");
     localStorage.removeItem("clothesForCart");
@@ -75,22 +74,24 @@ function eliminarCarrito(){
     actualizarContador();
    
 }
+//Boton para eliminar todo
  document.getElementById("vaciar-carrito").addEventListener("click", eliminarCarrito);
 
+ //Agregar prendas seleccionadas con bototn agregar a carrito.html
  function AddTable(){
    let subTotal = 0;
    let descuento = 0;
    let total = 0;
-   
+   let cartBody = "";
 
-let cartBody = "";
-for( let prenda of itemsForCart){
+    for( let prenda of itemsForCart){
     cartBody += `
     
     <td> <img src="../Images/${prenda.imagen}" width='100'</td>
     <td> ${prenda.nombre}</td>
     <td>${prenda.precio}</td>
     <td> ${prenda.quantity}</td>
+    //boton para eliminar la prenda seleccionada
     <td> <a href='#' class='delete fas fa-times-circle' data-id=${prenda.id} id='deleteBtn'</td>
     `
     subTotal += prenda.precio;
