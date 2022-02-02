@@ -1,58 +1,43 @@
-//Declaro los elementos del formulario
-
-let nombre = document.getElementById("nombre1");
-let apellido = document.getElementById("apellido");
-let ciudad = document.getElementById("ciudad");
-//let provincia = document.getElementById("provincia");
-let cp = document.getElementById("cp");
-
-//Defino el boton enviar
-let boton = document.getElementById("boton-enviar");
-//Defino el evento a ejecutar
-boton.addEventListener("click", eventoclick);
-
-// funcion con condicionales para ejecutar el boton enviar
-function eventoclick () {
-
-    if(nombre.value == ""){
+function formulario () {
+    let nombre = $("#nombre1").val();
+    let apellido = $("#apellido").val();
+    let ciudad = $("#ciudad").val();
+    let provincia = $("#provincia").val();
+    let cp = $("#cp").val();
     
-        var contenido = "<p class=' text-danger'>Hay campos que requieren ser completados</p>"
-        document.getElementById("boton-enviar").innerHTML = contenido;
-        var contenido = "<p class ='bg-light text-danger'> Nombre * </p>"
-        document.getElementById("nombre1").innerHTML = contenido;
-
-    }else{
+    if(nombre == "" ){
+        console.log("falta el nombre");
+        $('#boton-enviar').html("Hay campos que requieren ser completados");
+        $('#nombre1').html("Nombre *");
+     
         
-        var contenido = "<p class='bg-dark text-white'>Formulario enviado</p>"
-        document.getElementById("boton-enviar").innerHTML = contenido;
+    }  
+    if (apellido == ""){
+        console.log("falta el apellido");
+        $('#boton-enviar').html("Hay campos que requieren ser completados");
+         $('#apellido').html("Apellido *");
+      
+    } 
+    if (ciudad ==""){
+        console.log("falta la ciudad");
+        $('#boton-enviar').html("Hay campos que requieren ser completados");
+        $('#ciudad').html("Ciudad *");
+     
     }
+    if (cp == ""){
+        console.log("falta el cp");
+        $('#boton-enviar').html("Hay campos que requieren ser completados");
+         $('#cp').html("Codigo Postal *");
+     
+    }  else {
+        $("#boton-enviar").html("Formulario enviado");
+    }
+     }
 
- 
+    
+$("#boton-enviar").click(function(){
+    formulario();
+    console.log("formulario enviado");
+   
+})
 
-}
-
-
-
-
-
-
-//funcion guardada para mas adelante
-/*
-//constantes
-const C1 = 1;
-const C2 = 3;
-const C3 = 6;
-
-function calcularCuotas() {
-  var boton2 = document.getElementById("botonCalcular");
-
-  if (cuotas = 1) {
-
-      total = aplicarDescuento();
-      console.log (total);
-
-  }
-
-}
-
-*/

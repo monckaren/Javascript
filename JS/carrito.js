@@ -42,12 +42,12 @@ function actualizarContador (){
     let contador = document.getElementById("datosCarrito");
     contador.innerHTML = "<p>" + total+ " producto(s) </p>"
 }
-
+//Se buscan las prendas por id
 function buscarPrendas (id){
     let prendas = cargarPrendas2();
     return prendas.find(x => x.id == id);
 }
-
+//Se cargan las prendas 
 function cargarCarrito (){
     if (localStorage.getItem("cart")){
     return JSON.parse(localStorage.getItem("cart"));
@@ -112,40 +112,10 @@ function eliminarCarrito(){
 
     }
 
-
+//Insertar en la tabla de carrito.html
 document.getElementById("lista-compra").innerHTML = cartBody;
 actualizarContador();
 
  
 
 
-/* let button = document.getElementById("boton-agregar");
-button.onclick = () => {
-let contenido = agregarCarrrito(prendas.id);
-document.getElementById("carrito").innerHTML = contenido;
-actualizarContador();
-console.log("Se agrego "+prendas.nombre+"al carrito");} */
-
-
-/* agregarCarrrito(prendas.id);
-console.log("Se agrego al carrito"); */
-/* 
-class Carrito {
-    comprarProducto(e){
-        e.preventDefault();
-        const producto = e.target.parentElement.parentElement;
-        //this.leerDatosProducto(producto);
-        console.log(producto);
-
-    }
-}
-const carro = new Carrito();
-const carrito = document.getElementById("carrito");
-const productos = document.getElementById("prendas") ;
-const listaProductos = document.querySelector("#lista-carrito tbody");
-
-cargarEventos();
-
-function cargarEventos(){
-productos.addEventListener("click", (e) => carro.comprarProducto())
-} */
