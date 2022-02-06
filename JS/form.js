@@ -7,30 +7,30 @@ function formulario () {
     
     if(nombre == "" ){
         console.log("falta el nombre");
-        $('#boton-enviar').html("Hay campos que requieren ser completados");
-        $('#nombre1').html("Nombre *");
+        $('#mostrarMensaje').html("Hay campos que requieren ser completados");
+        $('#nombreLabel').html("Nombre *");
      
         
     }  
     if (apellido == ""){
         console.log("falta el apellido");
-        $('#boton-enviar').html("Hay campos que requieren ser completados");
-         $('#apellido').html("Apellido *");
+        $('#mostrarMensaje').html("Hay campos que requieren ser completados");
+         $('#apellidoLabel').html("Apellido *");
       
     } 
     if (ciudad ==""){
         console.log("falta la ciudad");
-        $('#boton-enviar').html("Hay campos que requieren ser completados");
-        $('#ciudad').html("Ciudad *");
+        $('#mostrarMensaje').html("Hay campos que requieren ser completados");
+        $('#ciudadLabel').html("Ciudad *");
      
     }
     if (cp == ""){
         console.log("falta el cp");
-        $('#boton-enviar').html("Hay campos que requieren ser completados");
-         $('#cp').html("Codigo Postal *");
+        $('#mostrarMensaje').html("Hay campos que requieren ser completados");
+         $('#cpLabel').html("Codigo Postal *");
      
     }  else {
-        $("#boton-enviar").html("Formulario enviado");
+        $("#mostrarMensaje").html("Formulario enviado");
     }
      }
 

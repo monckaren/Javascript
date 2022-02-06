@@ -59,29 +59,29 @@
           </nav>
     </header> 
        <section class="formulario ">
-           <div class="container">
+           <div class="container" >
                <div class="row">
            
                    <div class="mt-4 col-md-6">
                    <h2>Datos de Facturacion</h2>
                     <form class="row g-3" >
                         <div class="col-md-4" >
-                          <label for="validationServer01" class="form-label"  >Nombre</label>
-                          <input type="text" id = "nombre1" required>
+                          <label for="validationServer01" class="form-label" id="nombreLabel"  >Nombre</label>
+                          <input type="text" id = "nombre1" placeholder="Ingrese su nombre"required>
                           <div class="valid-feedback">
                            Nombre Valido
                           </div>
                         </div>
                         <div class="col-md-4">
-                          <label for="validationServer02" class="form-label" >Apellido</label>
-                          <input type="text" class="form-control " id="apellido"required>
+                          <label for="validationServer02" class="form-label" id="apellidoLabel">Apellido</label>
+                          <input type="text" class="form-control " id="apellido" placeholder="Ingrese su apellido"required>
                           <div class="valid-feedback">
                             Apellido Valido
                           </div>
                         </div>
                         <div class="col-md-6">
-                          <label for="validationServer03" class="form-label" >Ciudad</label>
-                          <input type="text" class="form-control " id="validationServer03" id="ciudad" aria-describedby="validationServer03Feedback" required>
+                          <label for="validationServer03" class="form-label" id="ciudadLabel">Ciudad</label>
+                          <input type="text" class="form-control " placeholder="Ciudad o Municipalidad" id="ciudad" aria-describedby="validationServer03Feedback" required>
                           <div id="validationServer03Feedback" class="invalid-feedback">
                             Ciudad o Municipalidad
                           </div>
@@ -122,14 +122,17 @@
                           </div>
                         </div>
                         <div class="col-md-3">
-                          <label for="validationServer05" class="form-label" >CP</label>
-                          <input type="text" class="form-control" id="cp" aria-describedby="validationServer05Feedback" required>
+                          <label for="validationServer05" class="form-label" id="cpLabel" >CP</label>
+                          <input type="text" class="form-control"placeholder="Codigo Postal" id="cp" aria-describedby="validationServer05Feedback" required>
                           <div id="validationServer05Feedback" class="invalid-feedback">
                            Ingrese un CP valido
                           </div>
                         </div>             
                         <div class="col-12"id="boton-enviar">
                           <button class="btn btn-primary "  type="button">Enviar</button>
+                        </div>
+                        <div id="mostrarMensaje">
+
                         </div>
                      </div>
                 </div>
@@ -147,27 +150,7 @@
                     <label class="form-check-label " for="validationFormCheck2">Gratis</label>
                     <p>Retira en la sucursal de CABA</p>
                     </div>
-                    <h3 class="fs-4 py-3 px-2">Calcular Cuotas</h3>
-                    </form>
-                    <select class="form-select cuotas" aria-label="Default select example">
-                    <option selected>Cantidad de cuotas</option>
-                    <option value="1">1</option>
-                    <option value="2">3</option>
-                    <option value="3">6</option>
-                    </select>
-                    <select class="form-select mt-3" aria-label="Default select example">
-                    <option selected>Tipo de tarjeta</option>
-                    <option value="4">Visa</option>
-                    <option value="5">Mastercard</option>
-                    <option value="6">American Express</option>
-                    </select>
-                    <button class=" btn btn-primary mt-3" id="botonCalcular" type="button"> Calcular</button>
-                  </div>
-                <div>
-                  <h3 class="total">Total a pagar: $</h3>
-              </div>
-            </div>
-              </div>
+                   
               
           </section>
           <!--JQuery-->
