@@ -71,4 +71,15 @@ const prendas = [
 //Animacion para mostrar las prendas 
 $("#btnSale").click(() =>{
    $(".prendasSale").fadeIn("fast"); 
+   $("#btnSaleUp").show("fast");
+});
+
+$("#btnSaleUp").click(() => {
+    $(".prendasSale").fadeOut("slow"); 
+    $("#btnSaleUp").hide("fast");
+})
+
+$("#btnSaleUp").css({
+    "margin-top": "20px",
+    
 });
