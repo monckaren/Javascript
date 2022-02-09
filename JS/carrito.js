@@ -114,7 +114,7 @@ function eliminarCarrito(){
     $("#total").html(total);
   
 }
-//Boton para eliminar los roductos seleccionados dentro el carrito
+//Boton para eliminar los productos seleccionados dentro el carrito
 function deleteId(id){
     let carrito = JSON.parse(localStorage.getItem("clothesForCart")) ; 
     let index = carrito.findIndex(x=>x.id===id);

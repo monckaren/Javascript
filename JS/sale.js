@@ -77,7 +77,7 @@ $("#btnSaleUp").click(() => {
     $(".prendasSale").fadeOut("slow"); 
     $("#btnSaleUp").hide("fast");
 })
-
+//Arreglos en el CSS con JQuery
 $("#btnSaleUp").css({
     "margin-top": "20px",
     

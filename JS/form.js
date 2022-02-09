@@ -1,3 +1,4 @@
+//Se definen las variables y las condiciones para enviar el formulario
 function formulario () {
     let nombre = $("#nombre1").val();
     let apellido = $("#apellido").val();
@@ -34,7 +35,7 @@ function formulario () {
     }
      }
 
-    
+//Al hacer click, si se cumplen las condiciones se envia el formulario  
 $("#boton-enviar").click(function(){
     formulario();
     console.log("formulario enviado");
