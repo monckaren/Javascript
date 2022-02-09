@@ -8,7 +8,6 @@ const prendas = [
     {id:6, nombre: "Blazer Black", imagen: "joshua-rondeau-3_sGB2ON4X0-unsplash.jpg", precio:"4600", quantity:0 },
     ]
     
-    
     //AÑADIR ELEMENTOS AL CARRITO
     function addElsForCart(prenda){
         // Parse any JSON previously stored in allEntries
@@ -73,7 +72,7 @@ $("#btnSale").click(() =>{
    $(".prendasSale").fadeIn("fast"); 
    $("#btnSaleUp").show("fast");
 });
-
+//Animacion para ocultar las prendas 
 $("#btnSaleUp").click(() => {
     $(".prendasSale").fadeOut("slow"); 
     $("#btnSaleUp").hide("fast");
@@ -83,3 +82,20 @@ $("#btnSaleUp").css({
     "margin-top": "20px",
     
 });
+
+//Aplicando AJAX al buscador de prendas
+$("#btnBuscar").click(() => {
+    let URL = "https://jsonplaceholder.typicode.com/photos"
+    $.get("URL", function(respuesta, estado){
+        if (estado === "success"){
+            console.log(respuesta);
+            let productos = respuesta;
+        }
+            for (let producto of productos){
+                $("#btnBuscar").append(`
+                <p> Nombre: ${producto.nombre}
+                <p>Precio: ${producto.precio}
+                `)
+            }
+        });
+    });

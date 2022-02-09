@@ -94,16 +94,16 @@ function eliminarCarrito(){
     <td> ${prenda.quantity}</td>
     
     `
-    subTotal += prenda.precio;
-    descuento += prenda.precio * 0.15;
-    total += parseFloat(prenda.precio - descuento);
-    
     cartBody += `
-    <td> ${subTotal}</td>
-    <td> <button onclick="deleteId(`+prenda.id+`)"><svg xmlns="http://www.w3.org/2000/svg" id="deleteBtn" width="16" height="16" fill="currentColor" class="bi bi-file-minus-fill" viewBox="0 0 16 16">
+    <td> ${prenda.precio * prenda.quantity}</td>
+    <td> <button class="btn bg-white" onclick="deleteId(`+prenda.id+`)"><svg xmlns="http://www.w3.org/2000/svg" id="deleteBtn" width="16" height="16" fill="currentColor" class="bi bi-file-minus-fill" viewBox="0 0 16 16">
     <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM6 7.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1 0-1z"/>
   </svg></button></td>
   </tr>`
+  subTotal += parseInt(prenda.precio * prenda.quantity) ;
+    
+    descuento += parseInt(prenda.precio * prenda.quantity) * 0.15;
+    total += parseInt(prenda.precio * prenda.quantity) - (prenda.precio * prenda.quantity * 0.15);
    
     } 
    
@@ -114,6 +114,7 @@ function eliminarCarrito(){
     $("#total").html(total);
   
 }
+//Boton para eliminar los roductos seleccionados dentro del carrito
 function deleteId(id){
     let carrito = JSON.parse(localStorage.getItem("clothesForCart")) ; 
     let index = carrito.findIndex(x=>x.id===id);
@@ -124,7 +125,18 @@ function deleteId(id){
 
 }
 
+
+
 //document.getElementById("deleteBtn").addEventListener("click", deleteId);
-
-
-
+/* 
+function calcularCuotas () {
+    let total = 0;
+    let itemsInCart=JSON.parse(localStorage.getItem("clothesForCart"));
+    let cuotas = document.getElementById("#cuotas");
+    for (var cuota of cuotas){
+        if(cuota == "1"){
+            $("#totalCutas").html = 
+        }
+    }
+    }
+ */

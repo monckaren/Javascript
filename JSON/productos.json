@@ -1,0 +1,9 @@
+[
+    {"id":1, "nombre":"Campera White", "imagen": "ary-milligan-nLVyej-i2N4-unsplash.jpg", "precio":"5800", "quantity": 0},
+    {"id":2, "nombre": "Remera Black Slim Fit", "imagen": "ian-dooley-1yl3jzKoKXg-unsplash.jpg", "precio":"2300", "quantity":0 },
+    {"id":3, "nombre": "Jean Slim Fit", "imagen": "vladimir-fedotov-MPfyh3xJ1iE-unsplash.jpg", "precio":"4800", "quantity":0 },
+    {"id":4, "nombre": "Jean Holgado Claro ", "imagen": "hans-isaacson-QJfXnkKrtlo-unsplash.jpg", "precio":"5300", "quantity":0 },
+    {"id":5, "nombre": "Jean Roto con Parches", "imagen": "alicia-petresc-BciCcl8tjVU-unsplash.jpg", "precio":"4300", "quantity":0 },
+    {"id":6, "nombre": "Blazer Black", "imagen": "joshua-rondeau-3_sGB2ON4X0-unsplash.jpg", "precio":"4600", "quantity":0 }
+    ]
+    
