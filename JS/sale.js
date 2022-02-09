@@ -83,19 +83,4 @@ $("#btnSaleUp").css({
     
 });
 
-//Aplicando AJAX al buscador de prendas
-$("#btnBuscar").click(() => {
-    let URL = "https://jsonplaceholder.typicode.com/photos"
-    $.get("URL", function(respuesta, estado){
-        if (estado === "success"){
-            console.log(respuesta);
-            let productos = respuesta;
-        }
-            for (let producto of productos){
-                $("#btnBuscar").append(`
-                <p> Nombre: ${producto.nombre}
-                <p>Precio: ${producto.precio}
-                `)
-            }
-        });
-    });
+

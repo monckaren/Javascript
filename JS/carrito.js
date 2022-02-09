@@ -114,7 +114,7 @@ function eliminarCarrito(){
     $("#total").html(total);
   
 }
-//Boton para eliminar los roductos seleccionados dentro del carrito
+//Boton para eliminar los roductos seleccionados dentro el carrito
 function deleteId(id){
     let carrito = JSON.parse(localStorage.getItem("clothesForCart")) ; 
     let index = carrito.findIndex(x=>x.id===id);
@@ -126,17 +126,3 @@ function deleteId(id){
 }
 
 
-
-//document.getElementById("deleteBtn").addEventListener("click", deleteId);
-/* 
-function calcularCuotas () {
-    let total = 0;
-    let itemsInCart=JSON.parse(localStorage.getItem("clothesForCart"));
-    let cuotas = document.getElementById("#cuotas");
-    for (var cuota of cuotas){
-        if(cuota == "1"){
-            $("#totalCutas").html = 
-        }
-    }
-    }
- */

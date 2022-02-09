@@ -18,8 +18,12 @@
           <a class="navbar-brand" href="index.html">E-SHOP</a>
           <a class="navbar-brand" href="index.html">Inicio</a>
           <a class="navbar-brand" href="#">Indumentaria</a>
-          <a class="navbar-brand" id="sale" href="sale.html">SALE</a>
-          <a class="navbar-brand" id="sale" href="carrito.html"><img src="/Images/pngwing.com.png" width="30px" alt=""></a>
+          <a class="navbar-brand" href="sale.html">SALE</a>
+          <div >
+            <a class="navbar-brand" id="carritoImg" href="carrito.html"><img src="../Images/pngwing.com.png" width="30px" alt=""></a>
+            <p id="datosCarrito"></p>
+            </div>
+            
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon" ></span>
           </button>
@@ -51,7 +55,7 @@
                 </li>
               </ul>
               <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Buscar Prenda" aria-label="Search">
+                <input class="form-control me-2" id="inputText"type="search" placeholder="Buscar Prenda" aria-label="Search">
                 <button class="btn btn-outline-success" id="btnBuscar" type="submit">Buscar</button>
               </form>
             </div>
