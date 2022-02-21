@@ -24,23 +24,18 @@ function actualizarContador (){
   
     let total = 0; 
     let itemsInCart=JSON.parse(localStorage.getItem("clothesForCart"));
+
+    if(!itemsInCart){
+        itemsInCart = [];
+    }
+
+    const sumaTotal = itemsInCart.reduce( (p1, p2) => ({quantity: p1.quantity + p2.quantity}));
+    debugger
+    console.log(sumaTotal);
   
-    if(itemsInCart && itemsInCart.length>0){
-        localStorage.setItem("totalCarrito", itemsInCart.length);
-    }else if(itemsInCart && itemsInCart.length === 0){
-        localStorage.setItem("totalCarrito",0);
 
-    }
-
-    if (localStorage.getItem("totalCarrito")) {
-        total = localStorage.getItem("totalCarrito");
-    }else{
-        localStorage.setItem("totalCarrito", 0)
-        total = localStorage.getItem("totalCarrito");
-    }
-    
     let contador = document.getElementById("datosCarrito");
-    contador.innerHTML = "<p>" + total+ " producto(s) </p>"
+    contador.innerHTML = "<p>" + sumaTotal.quantity+ " producto(s) </p>"
 }
 //Se buscan las prendas por id
 function buscarPrendas (id){
@@ -49,7 +44,7 @@ function buscarPrendas (id){
 }
 
 //Agrega las prendas al carrito
-function agregarCarrrito(id){
+function agregarCarrito(id){
     let prenda = buscarPrendas(id);
     let prendas2 = cargarCarrito();
     prendas.push(prenda);
@@ -85,6 +80,9 @@ function eliminarCarrito(){
    let total = 0;
    let cartBody = "";
    let itemsInCart=JSON.parse(localStorage.getItem("clothesForCart"));
+   if(!itemsInCart){
+    itemsInCart = [];
+}
     for( let prenda of itemsInCart){
     cartBody += `
     <tr>
@@ -101,7 +99,7 @@ function eliminarCarrito(){
   </svg></button></td>
   </tr>`
   subTotal += parseInt(prenda.precio * prenda.quantity) ;
-    
+
     descuento += parseInt(prenda.precio * prenda.quantity) * 0.15;
     total += parseInt(prenda.precio * prenda.quantity) - (prenda.precio * prenda.quantity * 0.15);
    
@@ -118,11 +116,21 @@ function eliminarCarrito(){
 function deleteId(id){
     let carrito = JSON.parse(localStorage.getItem("clothesForCart")) ; 
     let index = carrito.findIndex(x=>x.id===id);
-    carrito.splice(index,1);
-    localStorage.setItem("clothesForCart", JSON.stringify(carrito));
+    debugger
+
+    if(carrito[index].quantity > 1){
+        carrito[index].quantity -= 1;    
+    
+   
+    } else{
+        carrito.splice(index,1);
+    } 
+
+   localStorage.setItem("clothesForCart", JSON.stringify(carrito));
+    
     AddTable();
     actualizarContador();
+    }
 
-}
 
 

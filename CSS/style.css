@@ -53,6 +53,17 @@ align-items: center;
   
 }
 
+.card-img-top{
+    min-height: 333px;
+}
+.card-title{
+    min-height: 48px;
+}
+.buttonHide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .table{
     width: 70%;
