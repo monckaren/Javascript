@@ -30,7 +30,6 @@ function actualizarContador (){
     }
 
     const sumaTotal = itemsInCart.reduce( (p1, p2) => ({quantity: p1.quantity + p2.quantity}));
-    debugger
     console.log(sumaTotal);
   
 
@@ -116,7 +115,7 @@ function eliminarCarrito(){
 function deleteId(id){
     let carrito = JSON.parse(localStorage.getItem("clothesForCart")) ; 
     let index = carrito.findIndex(x=>x.id===id);
-    debugger
+  
 
     if(carrito[index].quantity > 1){
         carrito[index].quantity -= 1;    
