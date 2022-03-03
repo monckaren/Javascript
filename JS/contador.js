@@ -3,19 +3,18 @@
 
 //cargar prendas de la local storage
 //CON ESTO SE OBTIENEN LAS PRENDAS AÑADIDAS
-function cargarPrendas2(){
+function cargarPrendas2(isCarrito){
     console.log("cargado");
     let itemsForCart= JSON.parse(localStorage.getItem("clothesForCart"));
    
     actualizarContador()
-    AddTable();
+    if(isCarrito){
+        AddTable(); 
+    } 
+   
     return itemsForCart;
     
 }
-
-//ejecuta las funciones
-cargarPrendas2();
-
 
 //Se buscan las prendas por id
 function buscarPrendas (id){
@@ -50,14 +49,9 @@ function actualizarContador (){
     if(!itemsInCart){
         itemsInCart = [];
     }
-    let sumaTotal = 0;
-    if(itemsInCart.length !== 0){
-        sumaTotal = itemsInCart.reduce( (p1, p2) => ({quantity: p1.quantity + p2.quantity}));
-    }else{
-        sumaTotal = 0
-    }
-   
   
+    const sumaTotal = itemsInCart.reduce( (p1, p2) => ({quantity: p1.quantity + p2.quantity}), {quantity:0});
+    console.log(sumaTotal);
   
 
     let contador = document.getElementById("datosCarrito");

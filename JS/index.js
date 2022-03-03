@@ -1,6 +1,8 @@
 
 //Aplicando AJAX
 //Se muestra el catalogo con los productos en el array mediante la busqueda en JSON
+cargarPrendas2(false);
+
 $(".catalogo").append(`<button class="btn btn-outline-success" id="btnSearch" type="button">Buscar</button>`);
 $("#btnSearch").click(() =>{
     $.get("../JSON/productos.json", function(respuesta, status){

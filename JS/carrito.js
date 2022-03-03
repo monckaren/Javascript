@@ -2,7 +2,7 @@
 //Se crean las funciones para hacer funcionar el carrito
 
 
-
+cargarPrendas2(true);
 
 //Eliminar todas las prendas del carrito
 function eliminarCarrito(){

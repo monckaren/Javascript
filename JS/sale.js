@@ -1,3 +1,4 @@
+
 //Lista de productos 
 const prendas = [
     {id:1, nombre:"Campera White", imagen: "ary-milligan-nLVyej-i2N4-unsplash.jpg", precio:"5800", quantity: 0},
@@ -7,6 +8,8 @@ const prendas = [
     {id:5, nombre: "Jean Roto con Parches", imagen: "alicia-petresc-BciCcl8tjVU-unsplash.jpg", precio:"4300", quantity:0 },
     {id:6, nombre: "Blazer Black", imagen: "joshua-rondeau-3_sGB2ON4X0-unsplash.jpg", precio:"4600", quantity:0 },
     ]
+
+cargarPrendas2(false);
     
     //AÑADIR ELEMENTOS AL CARRITO
     function addElsForCart(prenda){
@@ -26,7 +29,7 @@ const prendas = [
         }
         // Save allEntries back to local storage
         localStorage.setItem("clothesForCart", JSON.stringify(clothesArr));
-        cargarPrendas2();
+        cargarPrendas2(false);
     }
     
     
