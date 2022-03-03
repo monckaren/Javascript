@@ -50,9 +50,14 @@ function actualizarContador (){
     if(!itemsInCart){
         itemsInCart = [];
     }
+    let sumaTotal = 0;
+    if(itemsInCart.length !== 0){
+        sumaTotal = itemsInCart.reduce( (p1, p2) => ({quantity: p1.quantity + p2.quantity}));
+    }else{
+        sumaTotal = 0
+    }
+   
   
-    const sumaTotal = itemsInCart.reduce( (p1, p2) => ({quantity: p1.quantity + p2.quantity}));
-    console.log(sumaTotal);
   
 
     let contador = document.getElementById("datosCarrito");
