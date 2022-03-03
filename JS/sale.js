@@ -13,7 +13,9 @@ const prendas = [
         // Parse any JSON previously stored in allEntries
      
         let clothesArr = JSON.parse(localStorage.getItem("clothesForCart"));
-        if(clothesArr == null) clothesArr = [];
+        if(clothesArr == null){
+            clothesArr = [];
+        } 
         if(clothesArr.some(x=> x.id===prenda.id)){
             let index=clothesArr.findIndex(x=>x.id===prenda.id);
             clothesArr[index].quantity+=1; 
@@ -33,20 +35,17 @@ const prendas = [
     for (let prenda of prendas) {
     
       
-        contenido += " <div class=' card p-2 g-4' style='width: 15rem;'>";
-        contenido += "<h3 class='card-tittle fs-3 text-danger'> -15%</h3>";
+        contenido += "<div class=' card p-2 g-4' style='width: 15rem;'>"; 
+        contenido += "<h3 class='card-tittle fs-3 text-danger'> -15% </h3>";
         contenido += "<img src='../Images/"+prenda.imagen +"' class='card-img-top'  alt='"+prenda.nombre +"'>";
-        contenido += "<div class='card-body'>";
+        contenido += "<div class='card-body'>"; 
         contenido += "<h5 class='card-title '>"+prenda.nombre+"</h5>";
-        contenido += "<div class='row mb-2'>";
-        contenido += "<div class=' card-text text-muted text-decoration-line-through'><span>$" +prenda.precio+"</span></div>";
+        contenido += "<div class='row mb-2'>"; 
+        contenido += "<div class=' card-text text-muted text-decoration-line-through'><span> $" +prenda.precio+"</span></div>";
         contenido += "<div class=' card-text'>$<span>" +prenda.precio*0.85+"</span></div>";
         contenido += "<div class=' card-text bg-dark text-light'><span>6 cuotas sin interes</span></div>";
-        contenido += "</div>";
-       
         //EVENTO PARA EL BOTON, AL HACER CLICK SE EJECUTA ADD ELEMENT
-        contenido += "<button type='button' class='btn btn-dark  btn-md ' type='button'  id='boton-agregar"+prenda.id+"' onclick=addElement("+prenda.id+")>Agregar</button>";
-        contenido += "<div>";
+        contenido += "<button type='button' class='btn btn-dark  btn-md boton-agregar' id='boton-agregar"+prenda.id+"' onclick=addElement("+prenda.id+")>Agregar</button>";
         contenido += "</div>";
         contenido += "</div>";
         contenido += "</div>";
@@ -76,7 +75,7 @@ $("#btnSale").click(() =>{
 $("#btnSaleUp").click(() => {
     $(".prendasSale").fadeOut("slow"); 
     $("#btnSaleUp").hide("fast");
-})
+});
 //Arreglos en el CSS con JQuery
 $("#btnSaleUp").css({
     "margin-top": "20px",
